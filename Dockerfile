@@ -41,7 +41,8 @@ RUN \
 	ncurses-dev \
 	openal-soft-dev \
 	python3-dev \
-	sqlite-dev && \
+	sqlite-dev \
+	postgresql-dev && \
  apk add --no-cache --virtual=build-dependencies-2 \
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
 	leveldb-dev && \
@@ -56,7 +57,8 @@ RUN \
 	luajit \
 	lua-socket \
 	sqlite \
-	sqlite-libs && \
+	sqlite-libs \
+	libpq && \
  apk add --no-cache \
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
 	leveldb && \
@@ -95,6 +97,7 @@ RUN \
 	-DENABLE_LEVELDB=1 \
 	-DENABLE_LUAJIT=1 \
 	-DENABLE_REDIS=1 \
+	-DENABLE_POSTGRESQL=1 \
 	-DENABLE_SOUND=0 \
 	-DENABLE_SYSTEM_GMP=1 \
 	-DRUN_IN_PLACE=0 && \
